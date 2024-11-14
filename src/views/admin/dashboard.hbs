@@ -1,0 +1,93 @@
+<body class="bg-gray-100 font-sans leading-normal tracking-normal">
+
+    <!-- Sidebar -->
+    <div class="flex h-screen">
+        <aside class="w-64 bg-gray-800 text-white">
+            <div class="p-4">
+                <h1 class="text-2xl font-bold text-center">Admin Dashboard</h1>
+            </div>
+            <nav class="mt-8">
+                <a href="#" class="block py-2 px-4 text-gray-300 hover:bg-gray-700 hover:text-white">Dashboard</a>
+                <a href="#" class="block py-2 px-4 text-gray-300 hover:bg-gray-700 hover:text-white">Users</a>
+                <a href="#" class="block py-2 px-4 text-gray-300 hover:bg-gray-700 hover:text-white">Products</a>
+                <a href="#" class="block py-2 px-4 text-gray-300 hover:bg-gray-700 hover:text-white">Orders</a>
+                <a href="#" class="block py-2 px-4 text-gray-300 hover:bg-gray-700 hover:text-white">Reports</a>
+                <a href="#" class="block py-2 px-4 text-gray-300 hover:bg-gray-700 hover:text-white">Settings</a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <div class="flex-1 flex flex-col">
+            <!-- Top Bar -->
+            <header class="bg-white shadow py-4 px-6 flex justify-between items-center">
+                <h2 class="text-xl font-semibold text-gray-800">Dashboard</h2>
+                <div>
+                    <span class="text-gray-700">Admin</span>
+                    <button class="ml-2 px-3 py-1 bg-blue-500 text-white rounded">Log Out</button>
+                </div>
+            </header>
+
+            <!-- Content Area -->
+            <main class="p-6 bg-gray-100 flex-1">
+                <!-- Dashboard Cards -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+                    <div class="bg-white p-4 shadow rounded-lg">
+                        <h3 class="text-gray-700">Total Users</h3>
+                        <p class="text-2xl font-bold">1,234</p>
+                    </div>
+                    <div class="bg-white p-4 shadow rounded-lg">
+                        <h3 class="text-gray-700">Total Orders</h3>
+                        <p class="text-2xl font-bold">567</p>
+                    </div>
+                    <div class="bg-white p-4 shadow rounded-lg">
+                        <h3 class="text-gray-700">Revenue</h3>
+                        <p class="text-2xl font-bold">$12,345</p>
+                    </div>
+                    <div class="bg-white p-4 shadow rounded-lg">
+                        <h3 class="text-gray-700">Pending Orders</h3>
+                        <p class="text-2xl font-bold">24</p>
+                    </div>
+                </div>
+
+                <!-- Recent Users Table -->
+                <div class="bg-white p-4 shadow rounded-lg mb-6">
+                    <h3 class="text-lg font-semibold text-gray-700 mb-4">Recent Users</h3>
+                    <table class="w-full text-left border-collapse">
+                        <thead>
+                            <tr>
+                                <th class="py-2 px-4 border-b text-gray-700">User ID</th>
+                                <th class="py-2 px-4 border-b text-gray-700">Name</th>
+                                <th class="py-2 px-4 border-b text-gray-700">Email</th>
+                                <th class="py-2 px-4 border-b text-gray-700">Status</th>
+                                <th class="py-2 px-4 border-b text-gray-700">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="py-2 px-4 border-b">1</td>
+                                <td class="py-2 px-4 border-b">John Doe</td>
+                                <td class="py-2 px-4 border-b">john@example.com</td>
+                                <td class="py-2 px-4 border-b text-green-600">Active</td>
+                                <td class="py-2 px-4 border-b">
+                                    <button class="px-2 py-1 text-xs bg-blue-500 text-white rounded">Edit</button>
+                                    <button class="px-2 py-1 text-xs bg-red-500 text-white rounded">Delete</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="py-2 px-4 border-b">2</td>
+                                <td class="py-2 px-4 border-b">Jane Smith</td>
+                                <td class="py-2 px-4 border-b">jane@example.com</td>
+                                <td class="py-2 px-4 border-b text-red-600">Inactive</td>
+                                <td class="py-2 px-4 border-b">
+                                    <button class="px-2 py-1 text-xs bg-blue-500 text-white rounded">Edit</button>
+                                    <button class="px-2 py-1 text-xs bg-red-500 text-white rounded">Delete</button>
+                                </td>
+                            </tr>
+                            <!-- Additional rows as needed -->
+                        </tbody>
+                    </table>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>

@@ -1,0 +1,116 @@
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+
+    <div class="bg-white shadow-md rounded-lg p-8 w-full max-w-sm">
+        <h2 class="text-2xl font-semibold text-center text-gray-800">OTP Verification</h2>
+        <p class="text-gray-600 text-center mt-2">Please enter the OTP sent to your email</p>
+
+        <form action="/verifyOtp" class="mt-6 space-y-4" id="otpForm" method="POST" >
+            <!-- OTP Input -->
+            <div class="flex justify-center space-x-2">
+        <input type="text" maxlength="1" class="otp-input w-12 h-12 text-center border rounded-lg text-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+        <input type="text" maxlength="1" class="otp-input w-12 h-12 text-center border rounded-lg text-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+        <input type="text" maxlength="1" class="otp-input w-12 h-12 text-center border rounded-lg text-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+        <input type="text" maxlength="1" class="otp-input w-12 h-12 text-center border rounded-lg text-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+        <input type="text" maxlength="1" class="otp-input w-12 h-12 text-center border rounded-lg text-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+        <input type="text" maxlength="1" class="otp-input w-12 h-12 text-center border rounded-lg text-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+    </div>
+    <!-- Hidden input to hold the combined OTP -->
+    <input type="hidden" id="otp" name="otp" />
+
+            <!-- Timer and Resend -->
+            <div class="flex items-center justify-between text-sm mt-4">
+                <span class="text-gray-600">Resend OTP in <span id="timer"
+                        class="text-red-600 font-semibold">30s</span></span>
+                <button type="button" id="resendButton" class="text-indigo-600 font-semibold hover:underline"
+                    disabled>Resend OTP</button>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit"
+                class="w-full bg-black hover:bg-gray-800 text-white font-semibold py-2 rounded-lg mt-4">
+                Verify OTP
+            </button>
+
+        </form>
+    </div>
+
+    <script>
+        let timer = 30;
+        let countdown;
+        const timerElement = document.getElementById('timer');
+        const resendButton = document.getElementById('resendButton');
+
+        // Function to start or restart the countdown timer
+        function startCountdown() {
+            clearInterval(countdown); // Clear any existing countdown
+            timer = 30; // Reset timer to 30 seconds
+            timerElement.textContent = `${timer}s`;
+            resendButton.disabled = true;
+            resendButton.classList.add('text-gray-400');
+            resendButton.classList.remove('text-indigo-600', 'hover:underline');
+
+            countdown = setInterval(() => {
+                timer--;
+                timerElement.textContent = `${timer}s`;
+                if (timer === 0) {
+                    clearInterval(countdown);
+                    resendButton.disabled = false;
+                    resendButton.classList.remove('text-gray-400');
+                    resendButton.classList.add('text-indigo-600', 'hover:underline');
+                }
+            }, 1000);
+        }
+
+        // Start the countdown when the page loads
+        startCountdown();
+
+        // Function to handle OTP resend
+        async function resendOtp() {
+            const email = document.getElementById('email')?.value; // Assuming you have an email input field for the user
+
+            try {
+                const response = await fetch('/resendOtp', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ email })
+                });
+
+                const data = await response.json();
+
+                if (data.success) {
+                    alert('OTP has been resent to your email!');
+                    startCountdown(); // Restart countdown
+                } else {
+                    alert('Failed to resend OTP: ' + data.message);
+                }
+            } catch (error) {
+                console.error('Error resending OTP:', error);
+                alert('An error occurred while resending OTP');
+            }
+        }
+
+        // Add event listener to Resend OTP button
+        resendButton.addEventListener('click', resendOtp);
+
+        const otpForm = document.getElementById('otpForm');
+    const otpInputs = document.querySelectorAll('.otp-input');
+    const otpHiddenInput = document.getElementById('otp');
+
+    otpForm.addEventListener('submit', (e) => {
+        e.preventDefault(); // Prevent the form from submitting right away
+        let otpValue = '';
+
+        // Collect the OTP values from each input
+        otpInputs.forEach(input => {
+            otpValue += input.value;
+        });
+
+        otpHiddenInput.value = otpValue; // Set the combined OTP value to the hidden input
+
+        otpForm.submit(); // Now submit the form
+    });
+
+    </script>
+</body>
