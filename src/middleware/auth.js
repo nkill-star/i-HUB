@@ -9,7 +9,9 @@ module.exports.isLogin = (req, res, next) => {
 
 module.exports.isLogout = (req, res, next) => {
     if (!req.isAuthenticated()) {
+        console.log("hi")
         return next();
+
     }
     return res.redirect('/user/userHome'); // redirect to user home if already authenticated
 };
