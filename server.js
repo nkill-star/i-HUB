@@ -7,6 +7,7 @@ const session = require('express-session');
 const connectDB = require('./src/db/connectDB');
 const userRoutes = require('./src/routes/userRoutes');
 const User = require('./src/models/userModel'); // Ensure this is correctly imported
+const flash = require('connect-flash'); //set up flash messages, typically for displaying error or success messages after redirects.
 
 app.set('view engine', 'hbs');
 app.set('views', path.join(__dirname, 'src', 'views'));
@@ -16,23 +17,19 @@ app.use(express.static('images'));
 const passport = require("passport");
 const GoogleStrategy = require("passport-google-oauth20").Strategy;
 const LocalStrategy = require('passport-local').Strategy;
-
-// Middlewares
-app.use(nocache());
-app.use(session({
-    secret: process.env.SESSION_SECRET || 'mysecretkey',
-    resave: false,
-    saveUninitialized: true,
-    cookie: {
-        maxAge: 1000 * 60 * 60 * 24,
-    },
-}));
-
-
-
-
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(nocache());
+
+// Middlewares
+app.use(
+  session({
+    secret: 'your-secret-key', // replace with a secure key
+    resave: false,
+    saveUninitialized: false,
+    cookie: { secure: false, maxAge: 60000 } // Adjust maxAge as needed
+  })
+);
 
 app.use(passport.initialize());
 app.use(passport.session());
@@ -91,6 +88,15 @@ passport.deserializeUser((id, done) => {
   User.findById(id)
     .then((user) => done(null, user))
     .catch((err) => done(err, null));
+});
+
+app.use(flash());
+
+// Middleware to make flash messages available in all views
+app.use((req, res, next) => {
+    res.locals.successMessage = req.flash('success');
+    res.locals.errorMessage = req.flash('error');
+    next();
 });
 
 // Routes

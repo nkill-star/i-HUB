@@ -149,9 +149,17 @@ const loadSignup = (req, res) => {
     res.render('user/signup');
 };
 const loadUserHome = (req, res) => {
-    console.log("loadUserHome")
-    res.render('user/userHome'); // Adjust the view name if it’s different
-};
+    // Prevent the page from being cached
+    res.setHeader('Cache-Control', 'no-store');
+  
+    // Check if the user is authenticated
+    if (!req.isAuthenticated()) {
+      return res.redirect('/user/login'); // If not authenticated, redirect to login
+    }
+  
+    // If the user is authenticated, render the userHome page
+    res.render('user/userHome');
+  };
 
 // Export functions
 module.exports = {

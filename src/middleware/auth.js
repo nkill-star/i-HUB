@@ -1,17 +1,17 @@
-module.exports.isLogin = (req, res, next) => {
-    console.log("User in session:", req.user);
-    if (req.isAuthenticated()) { // checks if session is authenticated by Passport
-        
-        return next();
+const isLogin = (req, res, next) => {
+    if (req.isAuthenticated()) {
+      return next(); // Proceed to the next middleware or route handler
     }
-    return res.redirect('/user/login'); // redirect to login if not authenticated
-};
+    res.redirect('/user/login'); // Redirect to login if not authenticated
+  };
 
-module.exports.isLogout = (req, res, next) => {
+const isLogout = (req, res, next) => {
     if (!req.isAuthenticated()) {
-        console.log("hi")
-        return next();
-
+        return next(); // proceed if logged out
     }
     return res.redirect('/user/userHome'); // redirect to user home if already authenticated
 };
+module.exports={
+    isLogin,
+    isLogout
+}

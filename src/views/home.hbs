@@ -1,4 +1,4 @@
-<body class="bg-gray-100">
+<body class="bg-gray-100 ">
 
   <!-- Header -->
   <header class="bg-black text-white text-center py-2 text-sm">
@@ -7,7 +7,7 @@
   <nav class="bg-white border-b">
     <div class="container mx-auto flex items-center justify-between px-6 py-4">
       <a href="/" class="text-xl font-bold">iHUB</a>
-      <div class="space-x-4">
+      <div class="flex justify-center space-x-6">
         <a href="#" class="text-gray-700">Home</a>
         <a href="#" class="text-gray-700">Categories</a>
         <a href="#" class="text-gray-700">Products</a>
@@ -20,14 +20,15 @@
       </div>
     </div>
   </nav>
-
+ <!-- Main Content Container -->
+  <div class="container mx-auto px-6 py-12">
   <!-- Hero Banner -->
   <section class="container mx-auto mt-6">
     <div class="bg-black text-white p-6 rounded-lg relative" style=" width: 94%;margin: auto;}">
       <img src="/offer.png" alt="Hero Image" class="w-full rounded-lg">
       <div class="absolute top-0 left-0 p-6">
         <h1 class="text-4xl font-bold">Up to 10% off Voucher</h1>
-        <button class="mt-4 bg-white text-black px-4 py-2 rounded">Shop Now</button>
+        {{!-- <button class="mt-4 bg-white text-black px-4 py-2 rounded" style="margin-top: 347px;margin-left: 92px;width: 43%;">Shop Now</button> --}}
       </div>
     </div>
   </section>
@@ -35,14 +36,40 @@
   <!-- Flash Sales Section -->
   <section class="container mx-auto mt-12">
     <h2 class="text-2xl font-bold">Flash Sales</h2>
-    <p class="text-gray-600 mt-2">Ending Soon: <span class="font-semibold text-red-500">03:23:19:56</span></p>
+    <p class="text-gray-600 mt-2">Ending Soon: <span id="timer" class="font-semibold text-red-500">03:23:19:56</span></p>
     <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-4">
       <!-- Product Card -->
       <div class="bg-white p-4 rounded-lg shadow">
-        <img src="https://via.placeholder.com/150" alt="Product Image" class="w-full rounded-lg">
-        <h3 class="font-semibold mt-2">iPhone 13 Pro</h3>
-        <p class="text-red-500 font-semibold">$999.00</p>
-        <p class="line-through text-gray-500">$1200.00</p>
+        <img src="/iphone 16pro.png" alt="Product Image" class="w-1/2 rounded-lg mx-auto">
+        <div class="text-center">
+          <h3 class="font-semibold mt-2">iPhone 16 Pro</h3>
+          <p class="text-red-500 font-semibold">₹71200</p>
+          <p class="line-through text-gray-500">₹119000</p>
+        </div>
+      </div>
+      <div class="bg-white p-4 rounded-lg shadow">
+        <img src="/iphone 16pro.png" alt="Product Image" class="w-1/2 rounded-lg mx-auto">
+        <div class="text-center">
+          <h3 class="font-semibold mt-2">iPhone 16 Pro</h3>
+          <p class="text-red-500 font-semibold">₹71200</p>
+          <p class="line-through text-gray-500">₹119000</p>
+        </div>
+      </div>
+      <div class="bg-white p-4 rounded-lg shadow">
+        <img src="/iphone 16pro.png" alt="Product Image" class="w-1/2 rounded-lg mx-auto">
+        <div class="text-center">
+          <h3 class="font-semibold mt-2">iPhone 16 Pro</h3>
+          <p class="text-red-500 font-semibold">₹71200</p>
+          <p class="line-through text-gray-500">₹119000</p>
+        </div>
+      </div>
+      <div class="bg-white p-4 rounded-lg shadow">
+        <img src="/iphone 16pro.png" alt="Product Image" class="w-1/2 rounded-lg mx-auto">
+        <div class="text-center">
+          <h3 class="font-semibold mt-2">iPhone 16 Pro</h3>
+          <p class="text-red-500 font-semibold">₹71200</p>
+          <p class="line-through text-gray-500">₹119000</p>
+        </div>
       </div>
       <!-- Repeat Product Cards as needed -->
     </div>
@@ -54,20 +81,49 @@
     <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-4">
       <!-- Product Card -->
       <div class="bg-white p-4 rounded-lg shadow">
-        <img src="https://via.placeholder.com/150" alt="Product Image" class="w-full rounded-lg">
-        <h3 class="font-semibold mt-2">iPhone 13 Pro</h3>
-        <p class="text-red-500 font-semibold">$999.00</p>
-        <p class="line-through text-gray-500">$1200.00</p>
+        <img src="/iphone 16pro.png" alt="Product Image" class="w-1/2 rounded-lg mx-auto">
+        <div class="text-center">
+          <h3 class="font-semibold mt-2">iPhone 16 Pro</h3>
+          <p class="text-red-500 font-semibold">₹71200</p>
+          <p class="line-through text-gray-500">₹119000</p>
+        </div>
       </div>
+      <div class="bg-white p-4 rounded-lg shadow">
+        <img src="/iphone 16pro.png" alt="Product Image" class="w-1/2 rounded-lg mx-auto">
+        <div class="text-center">
+          <h3 class="font-semibold mt-2">iPhone 16 Pro</h3>
+          <p class="text-red-500 font-semibold">₹71200</p>
+          <p class="line-through text-gray-500">₹119000</p>
+        </div>
+      </div>
+      <div class="bg-white p-4 rounded-lg shadow">
+        <img src="/iphone 16pro.png" alt="Product Image" class="w-1/2 rounded-lg mx-auto">
+        <div class="text-center">
+          <h3 class="font-semibold mt-2">iPhone 16 Pro</h3>
+          <p class="text-red-500 font-semibold">₹71200</p>
+          <p class="line-through text-gray-500">₹119000</p>
+        </div>
+      </div>
+      <div class="bg-white p-4 rounded-lg shadow">
+        <img src="/iphone 16pro.png" alt="Product Image" class="w-1/2 rounded-lg mx-auto">
+        <div class="text-center">
+          <h3 class="font-semibold mt-2">iPhone 16 Pro</h3>
+          <p class="text-red-500 font-semibold">₹71200</p>
+          <p class="line-through text-gray-500">₹119000</p>
+        </div>
+      </div>
+      
+      
+      
       <!-- Repeat Product Cards as needed -->
     </div>
   </section>
 
   <!-- Banner Section -->
   <section class="container mx-auto mt-12">
-    <div class="bg-black text-white rounded-lg p-8 text-center">
-      {{!-- <h2 class="text-3xl font-bold">Privacy matters</h2> --}}
-      <img src="/AppleAd.jpg" alt="Banner Image" class="w-full mt-4 rounded-lg">
+    <div class=" text-white rounded-lg p-8 flex justify-center">
+      
+      <img src="/AppleAd.jpg" alt="Banner Image" class="w-50% mt-4 rounded-lg">
     </div>
   </section>
 
@@ -86,6 +142,7 @@
       <p class="text-gray-600">100% money-back guarantee</p>
     </div>
   </section>
+  </div>
 
   <!-- Footer Section -->
   <footer class="bg-gray-900 text-white p-10">
@@ -139,5 +196,38 @@
       <p>Copyright © iHUB 2022. All rights reserved</p>
     </div>
   </footer>
+
+
+
+
+
+  <script>
+    // Set the end time (for example, 3 days from now)
+    const endTime = new Date().getTime() + (3 * 24 * 60 * 60 * 1000); // 3 days from now
+
+    // Update the timer every second
+    const countdownInterval = setInterval(() => {
+        const now = new Date().getTime();
+        const timeRemaining = endTime - now;
+
+        // Calculate days, hours, minutes, and seconds
+        const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+
+        // Format the timer string
+        const timerText = `${String(days).padStart(2, '0')}:${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+
+        // Display the timer in the HTML
+        document.getElementById("timer").textContent = timerText;
+
+        // Stop the countdown when time reaches zero
+        if (timeRemaining < 0) {
+            clearInterval(countdownInterval);
+            document.getElementById("timer").textContent = "00:00:00:00";
+        }
+    }, 1000);
+</script>
 
 </body>
