@@ -8,10 +8,10 @@
     <div class="container mx-auto flex items-center justify-between px-6 py-4">
       <a href="#" class="text-xl font-bold">iHUB</a>
       <div class="space-x-4">
-        <a href="#" class="text-gray-700">Home</a>
-        <a href="#" class="text-gray-700">Categories</a>
-        <a href="#" class="text-gray-700">Products</a>
-        <a href="#" class="text-gray-700">Contact</a>
+        <a href="/" class="text-gray-700">Home</a>
+        <a href="#" class="text-gray-700">Contat</a>
+        <a href="#" class="text-gray-700">About</a>
+        {{!-- <a href="#" class="text-gray-700">Contact</a> --}}
       </div>
       <div class="flex items-center space-x-4">
         <input type="text" placeholder="Search products..." class="border border-gray-300 rounded-lg p-2 text-sm">
@@ -21,104 +21,220 @@
     </div>
   </nav>
 
-  <!-- Hero Banner -->
-  <section class="container mx-auto mt-6">
-    <div class="bg-black text-white p-6 rounded-lg relative">
-      <img src="https://via.placeholder.com/1000x400" alt="Hero Image" class="w-full rounded-lg">
-      <div class="absolute top-0 left-0 p-6">
-        <h1 class="text-4xl font-bold">Up to 10% off Voucher</h1>
-        <button class="mt-4 bg-white text-black px-4 py-2 rounded">Shop Now</button>
+  <!-- Main Content Container -->
+  <div class="container mx-auto px-6 py-12">
+    <!-- Hero Banner -->
+    <section class="container mx-auto mt-6">
+      <div class="bg-black text-white p-6 rounded-lg relative" style=" width: 94%;margin: auto;}">
+        <img src="/offer.png" alt="Hero Image" class="w-full rounded-lg">
+        <div class="absolute top-0 left-0 p-6">
+          <h1 class="text-4xl font-bold">Up to 10% off Voucher</h1>
+          {{!-- <button class="mt-4 bg-white text-black px-4 py-2 rounded"
+            style="margin-top: 347px;margin-left: 92px;width: 43%;">Shop Now</button> --}}
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Flash Sales Section -->
-  <section class="container mx-auto mt-12">
-    <h2 class="text-2xl font-bold">Flash Sales</h2>
-    <p class="text-gray-600 mt-2">Ending Soon: <span class="font-semibold text-red-500">03:23:19:56</span></p>
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-4">
-      <!-- Product Card -->
+    <!-- Flash Sales Section -->
+    <section class="container mx-auto mt-12">
+      <h2 class="text-2xl font-bold">Flash Sales</h2>
+      <p class="text-gray-600 mt-2">Ending Soon: <span id="timer" class="font-semibold text-red-500">03:23:19:56</span>
+      </p>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-4">
+        <!-- Product Card -->
+        <div class="bg-white p-4 rounded-lg shadow cursor-pointer" onclick="window.location.href='/user/productPage';">
+          <img src="/iphone 16pro.png" alt="Product Image" class="w-1/2 rounded-lg mx-auto">
+          <div class="text-center">
+            <h3 class="font-semibold mt-2">iPhone 16 Pro</h3>
+            <p class="text-red-500 font-semibold">₹71200</p>
+            <p class="line-through text-gray-500">₹119000</p>
+          </div>
+        </div>
+        <div class="bg-white p-4 rounded-lg shadow">
+          <img src="/iphone16.png" alt="Product Image" class="w-1/2 rounded-lg mx-auto">
+          <div class="text-center">
+            <h3 class="font-semibold mt-2">iPhone 16 </h3>
+            <p class="text-red-500 font-semibold">₹47920</p>
+            <p class="line-through text-gray-500">₹79900</p>
+          </div>
+        </div>
+        <div class="bg-white p-4 rounded-lg shadow">
+          <img src="/iphone 15.png" alt="Product Image" class="w-1/2 rounded-lg mx-auto">
+          <div class="text-center">
+            <h3 class="font-semibold mt-2">iPhone 15</h3>
+            <p class="text-red-500 font-semibold">₹41920</p>
+            <p class="line-through text-gray-500">₹69900</p>
+          </div>
+        </div>
+        <div class="bg-white p-4 rounded-lg shadow">
+          <img src="/iphone 14.png" alt="Product Image" class="w-1/2 rounded-lg mx-auto">
+          <div class="text-center">
+            <h3 class="font-semibold mt-2">iPhone 14</h3>
+            <p class="text-red-500 font-semibold">₹35920</p>
+            <p class="line-through text-gray-500">₹59900</p>
+          </div>
+        </div>
+        <!-- Repeat Product Cards as needed -->
+      </div>
+      <!-- View All Button -->
+      <div class="text-center mt-6">
+        <button
+          class="bg-black text-white font-bold py-2 px-6 rounded hover:bg-gray-800 w-full sm:w-1/2 md:w-1/3 lg:w-1/4"
+          onclick="window.location.href='/user/viewAllProduct'">
+          View All Products
+        </button>
+      </div>
+    </section>
+
+    <!-- Best Selling Products Section -->
+    <section class="container mx-auto mt-12">
+      <h2 class="text-2xl font-bold">Best Selling Products</h2>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-4">
+        <!-- Product Card -->
+        <div class="bg-white p-4 rounded-lg shadow">
+          <img src="/iphone 16pro.png" alt="Product Image" class="w-1/2 rounded-lg mx-auto">
+          <div class="text-center">
+            <h3 class="font-semibold mt-2">iPhone 16 Pro</h3>
+            <p class="text-red-500 font-semibold">₹71200</p>
+            <p class="line-through text-gray-500">₹119000</p>
+          </div>
+        </div>
+        <div class="bg-white p-4 rounded-lg shadow">
+          <img src="/iphone16.png" alt="Product Image" class="w-1/2 rounded-lg mx-auto">
+          <div class="text-center">
+            <h3 class="font-semibold mt-2">iPhone 16 </h3>
+            <p class="text-red-500 font-semibold">₹47920</p>
+            <p class="line-through text-gray-500">₹79900</p>
+          </div>
+        </div>
+        <div class="bg-white p-4 rounded-lg shadow">
+          <img src="/iphone 15.png" alt="Product Image" class="w-1/2 rounded-lg mx-auto">
+          <div class="text-center">
+            <h3 class="font-semibold mt-2">iPhone 15</h3>
+            <p class="text-red-500 font-semibold">₹41920</p>
+            <p class="line-through text-gray-500">₹69900</p>
+          </div>
+        </div>
+        <div class="bg-white p-4 rounded-lg shadow">
+          <img src="/iphone 14.png" alt="Product Image" class="w-1/2 rounded-lg mx-auto">
+          <div class="text-center">
+            <h3 class="font-semibold mt-2">iPhone 14</h3>
+            <p class="text-red-500 font-semibold">₹35920</p>
+            <p class="line-through text-gray-500">₹59900</p>
+          </div>
+        </div>
+
+
+
+        <!-- Repeat Product Cards as needed -->
+      </div>
+    </section>
+
+    <!-- Banner Section -->
+    <section class="container mx-auto mt-12">
+      <div class=" text-white rounded-lg p-8 flex justify-center">
+
+        <img src="/apple durable.png" alt="Banner Image" class="w-50% mt-4 rounded-lg">
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="container mx-auto mt-12 grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
       <div class="bg-white p-4 rounded-lg shadow">
-        <img src="https://via.placeholder.com/150" alt="Product Image" class="w-full rounded-lg">
-        <h3 class="font-semibold mt-2">iPhone 13 Pro</h3>
-        <p class="text-red-500 font-semibold">$999.00</p>
-        <p class="line-through text-gray-500">$1200.00</p>
+        <h3 class="font-semibold">Free and Fast Delivery</h3>
+        <p class="text-gray-600">Free shipping on all orders</p>
       </div>
-      <!-- Repeat Product Cards as needed -->
-    </div>
-  </section>
-
-  <!-- Best Selling Products Section -->
-  <section class="container mx-auto mt-12">
-    <h2 class="text-2xl font-bold">Best Selling Products</h2>
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-4">
-      <!-- Product Card -->
       <div class="bg-white p-4 rounded-lg shadow">
-        <img src="https://via.placeholder.com/150" alt="Product Image" class="w-full rounded-lg">
-        <h3 class="font-semibold mt-2">iPhone 13 Pro</h3>
-        <p class="text-red-500 font-semibold">$999.00</p>
-        <p class="line-through text-gray-500">$1200.00</p>
+        <h3 class="font-semibold">24/7 Customer Service</h3>
+        <p class="text-gray-600">Friendly 24/7 support</p>
       </div>
-      <!-- Repeat Product Cards as needed -->
-    </div>
-  </section>
-
-  <!-- Banner Section -->
-  <section class="container mx-auto mt-12">
-    <div class="bg-black text-white rounded-lg p-8 text-center">
-      <h2 class="text-3xl font-bold">Privacy matters</h2>
-      <img src="https://via.placeholder.com/400" alt="Banner Image" class="w-full mt-4 rounded-lg">
-    </div>
-  </section>
-
-  <!-- Features Section -->
-  <section class="container mx-auto mt-12 grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
-    <div class="bg-white p-4 rounded-lg shadow">
-      <h3 class="font-semibold">Free and Fast Delivery</h3>
-      <p class="text-gray-600">Free shipping on all orders</p>
-    </div>
-    <div class="bg-white p-4 rounded-lg shadow">
-      <h3 class="font-semibold">24/7 Customer Service</h3>
-      <p class="text-gray-600">Friendly 24/7 support</p>
-    </div>
-    <div class="bg-white p-4 rounded-lg shadow">
-      <h3 class="font-semibold">Money Back Guarantee</h3>
-      <p class="text-gray-600">100% money-back guarantee</p>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="bg-black text-white mt-12 py-12">
-    <div class="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
-      <div>
-        <h3 class="font-bold text-lg">Subscribe</h3>
-        <input type="text" placeholder="Email" class="mt-2 p-2 rounded bg-gray-800 text-white w-full">
+      <div class="bg-white p-4 rounded-lg shadow">
+        <h3 class="font-semibold">Money Back Guarantee</h3>
+        <p class="text-gray-600">100% money-back guarantee</p>
       </div>
+    </section>
+  </div>
+
+  <!-- Footer Section -->
+  <footer class="bg-gray-900 text-white p-10">
+    <div class="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+      <!-- Subscribe -->
       <div>
-        <h3 class="font-bold text-lg">Support</h3>
-        <ul class="mt-2 space-y-1">
-          <li><a href="#" class="text-gray-400">Help Center</a></li>
-          <li><a href="#" class="text-gray-400">FAQs</a></li>
+        <h3 class="font-bold mb-4">Subscribe</h3>
+        <p class="text-gray-400 mb-2">Get 10% off your first order</p>
+        <input type="email" placeholder="Enter your email" class="w-full p-2 rounded bg-gray-800 text-white">
+      </div>
+      <!-- Support -->
+      <div>
+        <h3 class="font-bold mb-4">Support</h3>
+        <p class="text-gray-400">111 Bijoy sarani, Dhaka, DH 1515, Bangladesh</p>
+        <p class="text-gray-400">exclusive@gmail.com</p>
+        <p class="text-gray-400">+88015-88888-9999</p>
+      </div>
+      <!-- Account -->
+      <div>
+        <h3 class="font-bold mb-4">Account</h3>
+        <ul class="space-y-2 text-gray-400">
+          <li><a href="#">My Account</a></li>
+          <li><a href="#">Login / Register</a></li>
+          <li><a href="#">Cart</a></li>
+          <li><a href="#">Wishlist</a></li>
+          <li><a href="#">Shop</a></li>
         </ul>
       </div>
+      <!-- Quick Link -->
       <div>
-        <h3 class="font-bold text-lg">Account</h3>
-        <ul class="mt-2 space-y-1">
-          <li><a href="#" class="text-gray-400">Login</a></li>
-          <li><a href="#" class="text-gray-400">Register</a></li>
+        <h3 class="font-bold mb-4">Quick Link</h3>
+        <ul class="space-y-2 text-gray-400">
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms Of Use</a></li>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Contact</a></li>
         </ul>
       </div>
+      <!-- Download App -->
       <div>
-        <h3 class="font-bold text-lg">Quick Link</h3>
-        <ul class="mt-2 space-y-1">
-          <li><a href="#" class="text-gray-400">Privacy Policy</a></li>
-          <li><a href="#" class="text-gray-400">Terms & Conditions</a></li>
-        </ul>
+        <h3 class="font-bold mb-4">Download App</h3>
+        <p class="text-gray-400 mb-2">Save ₹300 With App New User Only</p>
+        <div class="flex flex-col md:flex-row lg:flex-col space-y-4 lg:space-y-4 lg:space-y-4 max-w-xs mx-auto">
+          <img src="/playstroe.png" alt="Google Play" class="w-4/5 h-auto object-contain">
+          <img src="/appstore (2).png" alt="App Store" class="w-4/5 h-auto object-contain">
+        </div>
+
       </div>
     </div>
-    <div class="text-center text-gray-600 mt-8">
-      &copy; 2024 iHUB. All rights reserved.
+    <div class="text-center mt-8 text-gray-500">
+      <p>Copyright © iHUB 2022. All rights reserved</p>
     </div>
   </footer>
 
+
+  <script>
+    // Set the end time (for example, 3 days from now)
+    const endTime = new Date().getTime() + (3 * 24 * 60 * 60 * 1000); // 3 days from now
+
+    // Update the timer every second
+    const countdownInterval = setInterval(() => {
+      const now = new Date().getTime();
+      const timeRemaining = endTime - now;
+
+      // Calculate days, hours, minutes, and seconds
+      const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+
+      // Format the timer string
+      const timerText = `${String(days).padStart(2, '0')}:${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+
+      // Display the timer in the HTML
+      document.getElementById("timer").textContent = timerText;
+
+      // Stop the countdown when time reaches zero
+      if (timeRemaining < 0) {
+        clearInterval(countdownInterval);
+        document.getElementById("timer").textContent = "00:00:00:00";
+      }
+    }, 1000);
+  </script>
 </body>

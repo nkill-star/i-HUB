@@ -140,6 +140,12 @@ const logout = (req, res) => {
 const loadHome = (req, res) => {
     res.render('home');
 };
+const loadViewAllProduct=(req,res)=>{
+    res.render('user/viewAllProduct')
+}
+const loadProductPage=(req,res)=>{
+    res.render('user/productPage')
+}
 
 const loadLogin = (req, res) => {
     res.render('user/login');
@@ -170,5 +176,7 @@ module.exports = {
     verifyOtp,
     resendOtp,
     loadUserHome,
-    logout
+    logout,
+    loadViewAllProduct,
+    loadProductPage
 };

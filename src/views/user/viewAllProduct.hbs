@@ -1,0 +1,342 @@
+<body class="bg-gray-100">
+    <!-- Header -->
+    <header class="bg-black text-white text-center py-2 text-sm">
+        <p>Summer Sale is On! Get up to 10% off on Apple Products | Free Shipping</p>
+    </header>
+    <nav class="bg-white border-b">
+        <div class="container mx-auto flex items-center justify-between px-6 py-4">
+            <a href="/" class="text-xl font-bold">iHUB</a>
+            <div class="space-x-4">
+                <a href="/" class="text-gray-700">Home</a>
+                <a href="#" class="text-gray-700">Contat</a>
+                <a href="#" class="text-gray-700">About</a>
+                {{!-- <a href="#" class="text-gray-700">Contact</a> --}}
+            </div>
+            <div class="flex items-center space-x-4">
+                <input type="text" placeholder="Search products..."
+                    class="border border-gray-300 rounded-lg p-2 text-sm">
+                <button class="text-gray-700">Cart</button>
+                <button class="text-gray-700 " onclick="window.location.href='/user/logout'">Logout</button>
+            </div>
+        </div>
+    </nav>
+    <!-- Main Content Container -->
+    <div class="container mx-auto px-6 py-12">
+        <div class="relative inline-block w-64">
+                <!-- Dropdown Button -->
+                <button
+                    class="w-full bg-white text-black text-left font-medium flex justify-between items-center px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-100 focus:outline-none"
+                    id="dropdownButton" onclick="toggleDropdown()">
+                    Choose Variant
+                    <span class="text-gray-500 text-sm">▼</span>
+                </button>
+
+                <!-- Dropdown Options -->
+                <div id="dropdownOptions"
+                    class="absolute hidden mt-1 w-full bg-white border border-gray-300 rounded-lg shadow-lg z-10">
+                    <ul>
+                        <li>
+                            <button class="block w-full text-left px-4 py-2 hover:bg-gray-100">
+                                 Pro Variant
+                            </button>
+                        </li>
+                        <li>
+                            <button class="block w-full text-left px-4 py-2 hover:bg-gray-100">
+                                Base Variant
+                            </button>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-4">
+            
+
+            <!-- Product Card -->
+            <div class="bg-white p-4 rounded-lg shadow flex flex-col text-center">
+                <img src="/iphone 16pro.png" alt="Product Image" class="w-1/2 rounded-lg mx-auto">
+                <div class="flex-grow text-center">
+                    <h3 class="font-semibold mt-2">iPhone 16 Pro</h3>
+                    <p class="text-red-500 font-semibold">₹71200</p>
+                    <p class="line-through text-gray-500">₹119000</p>
+                </div>
+                <!-- Add to Cart Button -->
+                <button
+                    class="bg-black text-white font-bold py-2 px-4 mt-4 rounded hover:bg-gray-800 w-full sm:w-1/2 mx-auto">
+                    Add to Cart
+                </button>
+            </div>
+
+            <div class="bg-white p-4 rounded-lg shadow flex flex-col text-center">
+                <img src="/iphone16.png" alt="Product Image" class="w-1/2 rounded-lg mx-auto">
+                <div class="flex-grow text-center">
+                    <h3 class="font-semibold mt-2">iPhone 16</h3>
+                    <p class="text-red-500 font-semibold">₹47920</p>
+                    <p class="line-through text-gray-500">₹79900</p>
+                </div>
+                <!-- Add to Cart Button -->
+                <button
+                    class="bg-black text-white font-bold py-2 px-4 mt-4 rounded hover:bg-gray-800 w-full sm:w-1/2 mx-auto">
+                    Add to Cart
+                </button>
+            </div>
+
+            <div class="bg-white p-4 rounded-lg shadow flex flex-col text-center">
+                <img src="/iphone 15.png" alt="Product Image" class="w-1/2 rounded-lg mx-auto">
+                <div class="flex-grow text-center">
+                    <h3 class="font-semibold mt-2">iPhone 15</h3>
+                    <p class="text-red-500 font-semibold">₹41920</p>
+                    <p class="line-through text-gray-500">₹69900</p>
+                </div>
+                <!-- Add to Cart Button -->
+                <button
+                    class="bg-black text-white font-bold py-2 px-4 mt-4 rounded hover:bg-gray-800 w-full sm:w-1/2 mx-auto">
+                    Add to Cart
+                </button>
+            </div>
+
+            <div class="bg-white p-4 rounded-lg shadow flex flex-col text-center">
+                <img src="/iphone 14.png" alt="Product Image" class="w-1/2 rounded-lg mx-auto">
+                <div class="flex-grow text-center">
+                    <h3 class="font-semibold mt-2">iPhone 14</h3>
+                    <p class="text-red-500 font-semibold">₹35920</p>
+                    <p class="line-through text-gray-500">₹59900</p>
+                </div>
+                <!-- Add to Cart Button -->
+                <button
+                    class="bg-black text-white font-bold py-2 px-4 mt-4 rounded hover:bg-gray-800 w-full sm:w-1/2 mx-auto">
+                    Add to Cart
+                </button>
+            </div>
+            <div class="bg-white p-4 rounded-lg shadow flex flex-col text-center">
+                <img src="/iphone 16pro.png" alt="Product Image" class="w-1/2 rounded-lg mx-auto">
+                <div class="flex-grow text-center">
+                    <h3 class="font-semibold mt-2">iPhone 16 Pro</h3>
+                    <p class="text-red-500 font-semibold">₹71200</p>
+                    <p class="line-through text-gray-500">₹119000</p>
+                </div>
+                <!-- Add to Cart Button -->
+                <button
+                    class="bg-black text-white font-bold py-2 px-4 mt-4 rounded hover:bg-gray-800 w-full sm:w-1/2 mx-auto">
+                    Add to Cart
+                </button>
+            </div>
+            <div class="bg-white p-4 rounded-lg shadow flex flex-col text-center">
+                <img src="/iphone16.png" alt="Product Image" class="w-1/2 rounded-lg mx-auto">
+                <div class="flex-grow text-center">
+                    <h3 class="font-semibold mt-2">iPhone 16</h3>
+                    <p class="text-red-500 font-semibold">₹47920</p>
+                    <p class="line-through text-gray-500">₹79900</p>
+                </div>
+                <!-- Add to Cart Button -->
+                <button
+                    class="bg-black text-white font-bold py-2 px-4 mt-4 rounded hover:bg-gray-800 w-full sm:w-1/2 mx-auto">
+                    Add to Cart
+                </button>
+            </div>
+
+            <div class="bg-white p-4 rounded-lg shadow flex flex-col text-center">
+                <img src="/iphone 15.png" alt="Product Image" class="w-1/2 rounded-lg mx-auto">
+                <div class="flex-grow text-center">
+                    <h3 class="font-semibold mt-2">iPhone 15</h3>
+                    <p class="text-red-500 font-semibold">₹41920</p>
+                    <p class="line-through text-gray-500">₹69900</p>
+                </div>
+                <!-- Add to Cart Button -->
+                <button
+                    class="bg-black text-white font-bold py-2 px-4 mt-4 rounded hover:bg-gray-800 w-full sm:w-1/2 mx-auto">
+                    Add to Cart
+                </button>
+            </div>
+
+            <div class="bg-white p-4 rounded-lg shadow flex flex-col text-center">
+                <img src="/iphone 14.png" alt="Product Image" class="w-1/2 rounded-lg mx-auto">
+                <div class="flex-grow text-center">
+                    <h3 class="font-semibold mt-2">iPhone 14</h3>
+                    <p class="text-red-500 font-semibold">₹35920</p>
+                    <p class="line-through text-gray-500">₹59900</p>
+                </div>
+                <!-- Add to Cart Button -->
+                <button
+                    class="bg-black text-white font-bold py-2 px-4 mt-4 rounded hover:bg-gray-800 w-full sm:w-1/2 mx-auto">
+                    Add to Cart
+                </button>
+            </div>
+            <div class="bg-white p-4 rounded-lg shadow flex flex-col text-center">
+                <img src="/iphone 16pro.png" alt="Product Image" class="w-1/2 rounded-lg mx-auto">
+                <div class="flex-grow text-center">
+                    <h3 class="font-semibold mt-2">iPhone 16 Pro</h3>
+                    <p class="text-red-500 font-semibold">₹71200</p>
+                    <p class="line-through text-gray-500">₹119000</p>
+                </div>
+                <!-- Add to Cart Button -->
+                <button
+                    class="bg-black text-white font-bold py-2 px-4 mt-4 rounded hover:bg-gray-800 w-full sm:w-1/2 mx-auto">
+                    Add to Cart
+                </button>
+            </div>
+
+            <div class="bg-white p-4 rounded-lg shadow flex flex-col text-center">
+                <img src="/iphone16.png" alt="Product Image" class="w-1/2 rounded-lg mx-auto">
+                <div class="flex-grow text-center">
+                    <h3 class="font-semibold mt-2">iPhone 16</h3>
+                    <p class="text-red-500 font-semibold">₹47920</p>
+                    <p class="line-through text-gray-500">₹79900</p>
+                </div>
+                <!-- Add to Cart Button -->
+                <button
+                    class="bg-black text-white font-bold py-2 px-4 mt-4 rounded hover:bg-gray-800 w-full sm:w-1/2 mx-auto">
+                    Add to Cart
+                </button>
+            </div>
+
+            <div class="bg-white p-4 rounded-lg shadow flex flex-col text-center">
+                <img src="/iphone 15.png" alt="Product Image" class="w-1/2 rounded-lg mx-auto">
+                <div class="flex-grow text-center">
+                    <h3 class="font-semibold mt-2">iPhone 15</h3>
+                    <p class="text-red-500 font-semibold">₹41920</p>
+                    <p class="line-through text-gray-500">₹69900</p>
+                </div>
+                <!-- Add to Cart Button -->
+                <button
+                    class="bg-black text-white font-bold py-2 px-4 mt-4 rounded hover:bg-gray-800 w-full sm:w-1/2 mx-auto">
+                    Add to Cart
+                </button>
+            </div>
+
+            <div class="bg-white p-4 rounded-lg shadow flex flex-col text-center">
+                <img src="/iphone 14.png" alt="Product Image" class="w-1/2 rounded-lg mx-auto">
+                <div class="flex-grow text-center">
+                    <h3 class="font-semibold mt-2">iPhone 14</h3>
+                    <p class="text-red-500 font-semibold">₹35920</p>
+                    <p class="line-through text-gray-500">₹59900</p>
+                </div>
+                <!-- Add to Cart Button -->
+                <button
+                    class="bg-black text-white font-bold py-2 px-4 mt-4 rounded hover:bg-gray-800 w-full sm:w-1/2 mx-auto">
+                    Add to Cart
+                </button>
+            </div>
+            <div class="bg-white p-4 rounded-lg shadow flex flex-col text-center">
+                <img src="/iphone 16pro.png" alt="Product Image" class="w-1/2 rounded-lg mx-auto">
+                <div class="flex-grow text-center">
+                    <h3 class="font-semibold mt-2">iPhone 16 Pro</h3>
+                    <p class="text-red-500 font-semibold">₹71200</p>
+                    <p class="line-through text-gray-500">₹119000</p>
+                </div>
+                <!-- Add to Cart Button -->
+                <button
+                    class="bg-black text-white font-bold py-2 px-4 mt-4 rounded hover:bg-gray-800 w-full sm:w-1/2 mx-auto">
+                    Add to Cart
+                </button>
+            </div>
+
+            <div class="bg-white p-4 rounded-lg shadow flex flex-col text-center">
+                <img src="/iphone16.png" alt="Product Image" class="w-1/2 rounded-lg mx-auto">
+                <div class="flex-grow text-center">
+                    <h3 class="font-semibold mt-2">iPhone 16</h3>
+                    <p class="text-red-500 font-semibold">₹47920</p>
+                    <p class="line-through text-gray-500">₹79900</p>
+                </div>
+                <!-- Add to Cart Button -->
+                <button
+                    class="bg-black text-white font-bold py-2 px-4 mt-4 rounded hover:bg-gray-800 w-full sm:w-1/2 mx-auto">
+                    Add to Cart
+                </button>
+            </div>
+
+            <div class="bg-white p-4 rounded-lg shadow flex flex-col text-center">
+                <img src="/iphone 15.png" alt="Product Image" class="w-1/2 rounded-lg mx-auto">
+                <div class="flex-grow text-center">
+                    <h3 class="font-semibold mt-2">iPhone 15</h3>
+                    <p class="text-red-500 font-semibold">₹41920</p>
+                    <p class="line-through text-gray-500">₹69900</p>
+                </div>
+                <!-- Add to Cart Button -->
+                <button
+                    class="bg-black text-white font-bold py-2 px-4 mt-4 rounded hover:bg-gray-800 w-full sm:w-1/2 mx-auto">
+                    Add to Cart
+                </button>
+            </div>
+
+            <div class="bg-white p-4 rounded-lg shadow flex flex-col text-center">
+                <img src="/iphone 14.png" alt="Product Image" class="w-1/2 rounded-lg mx-auto">
+                <div class="flex-grow text-center">
+                    <h3 class="font-semibold mt-2">iPhone 14</h3>
+                    <p class="text-red-500 font-semibold">₹35920</p>
+                    <p class="line-through text-gray-500">₹59900</p>
+                </div>
+                <!-- Add to Cart Button -->
+                <button
+                    class="bg-black text-white font-bold py-2 px-4 mt-4 rounded hover:bg-gray-800 w-full sm:w-1/2 mx-auto">
+                    Add to Cart
+                </button>
+            </div>
+
+        </div>
+
+        <!-- Repeat Product Cards as needed -->
+    </div>
+    <!-- Footer Section -->
+    <footer class="bg-gray-900 text-white p-10">
+        <div class="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+            <!-- Subscribe -->
+            <div>
+                <h3 class="font-bold mb-4">Subscribe</h3>
+                <p class="text-gray-400 mb-2">Get 10% off your first order</p>
+                <input type="email" placeholder="Enter your email" class="w-full p-2 rounded bg-gray-800 text-white">
+            </div>
+            <!-- Support -->
+            <div>
+                <h3 class="font-bold mb-4">Support</h3>
+                <p class="text-gray-400">111 Bijoy sarani, Dhaka, DH 1515, Bangladesh</p>
+                <p class="text-gray-400">exclusive@gmail.com</p>
+                <p class="text-gray-400">+88015-88888-9999</p>
+            </div>
+            <!-- Account -->
+            <div>
+                <h3 class="font-bold mb-4">Account</h3>
+                <ul class="space-y-2 text-gray-400">
+                    <li><a href="#">My Account</a></li>
+                    <li><a href="#">Login / Register</a></li>
+                    <li><a href="#">Cart</a></li>
+                    <li><a href="#">Wishlist</a></li>
+                    <li><a href="#">Shop</a></li>
+                </ul>
+            </div>
+            <!-- Quick Link -->
+            <div>
+                <h3 class="font-bold mb-4">Quick Link</h3>
+                <ul class="space-y-2 text-gray-400">
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms Of Use</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <!-- Download App -->
+            <div>
+                <h3 class="font-bold mb-4">Download App</h3>
+                <p class="text-gray-400 mb-2">Save ₹300 With App New User Only</p>
+                <div class="flex flex-col md:flex-row lg:flex-col space-y-4 lg:space-y-4 lg:space-y-4 max-w-xs mx-auto">
+                    <img src="/playstroe.png" alt="Google Play" class="w-4/5 h-auto object-contain">
+                    <img src="/appstore (2).png" alt="App Store" class="w-4/5 h-auto object-contain">
+                </div>
+
+            </div>
+        </div>
+        <div class="text-center mt-8 text-gray-500">
+            <p>Copyright © iHUB 2022. All rights reserved</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleDropdown() {
+  const dropdown = document.getElementById('dropdownOptions');
+  dropdown.classList.toggle('hidden');
+}
+
+    </script>
+</body>

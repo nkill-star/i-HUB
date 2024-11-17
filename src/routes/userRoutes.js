@@ -6,6 +6,8 @@ const passport = require("passport");
 
 // Define routes
 router.get('/',auth.isLogout, userController.loadHome);
+router.get('/user/viewAllProduct',userController.loadViewAllProduct)
+router.get('/user/productPage',userController.loadProductPage)
 
 // Authentication routes
 router.get('/user/login', auth.isLogout, userController.loadLogin);
