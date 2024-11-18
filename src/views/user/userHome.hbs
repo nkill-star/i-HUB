@@ -15,7 +15,10 @@
       </div>
       <div class="flex items-center space-x-4">
         <input type="text" placeholder="Search products..." class="border border-gray-300 rounded-lg p-2 text-sm">
-        <button class="text-gray-700">Cart</button>
+        {{!-- <button class="text-gray-700">Cart</button> --}}
+        
+        <button><i class="fa-solid fa-cart-shopping"></i></button>
+        <button><i class="fa-solid fa-user"></i></button>
         <button class="text-gray-700 " onclick="window.location.href='/user/logout'">Logout</button>
       </div>
     </div>
@@ -141,14 +144,17 @@
     <!-- Features Section -->
     <section class="container mx-auto mt-12 grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
       <div class="bg-white p-4 rounded-lg shadow">
+        <i class="fa-solid fa-truck"></i>
         <h3 class="font-semibold">Free and Fast Delivery</h3>
         <p class="text-gray-600">Free shipping on all orders</p>
       </div>
       <div class="bg-white p-4 rounded-lg shadow">
+        <i class="fa-solid fa-headphones-simple"></i>
         <h3 class="font-semibold">24/7 Customer Service</h3>
         <p class="text-gray-600">Friendly 24/7 support</p>
       </div>
       <div class="bg-white p-4 rounded-lg shadow">
+        <i class="fa-regular fa-circle-check"></i>
         <h3 class="font-semibold">Money Back Guarantee</h3>
         <p class="text-gray-600">100% money-back guarantee</p>
       </div>

@@ -1,60 +1,79 @@
 <body class="bg-gray-50 text-gray-800">
-    <!-- Notification Bar -->
-        <div class="bg-black text-white text-center py-2">
-            <p>Summer Sale For All iPhones And Free Express Delivery - OFF 50% <a href="#"
-                    class="text-yellow-300 underline">ShopNow</a></p>
-        </div>
+  <style>
+    #zoomLens {
+      pointer-events: none;
+    }
 
-        <!-- Header Section -->
-        <header class="bg-white shadow">
-            <div class="container mx-auto p-4 flex items-center justify-between">
-                <a href="/" class="cursor-pointer">
-                    <h1 class="text-2xl font-bold">i HUB</h1>
-                </a>
+    #zoomResult {
+      background-repeat: no-repeat;
+      pointer-events: none;
+    }
+  </style>
+  <!-- Notification Bar -->
+  <div class="bg-black text-white text-center py-2">
+    <p>Summer Sale For All iPhones And Free Express Delivery - OFF 50% <a href="#"
+        class="text-yellow-300 underline">ShopNow</a></p>
+  </div>
+
+  <!-- Header Section -->
+  <header class="bg-white shadow">
+    <div class="container mx-auto p-4 flex items-center justify-between">
+      <a href="/" class="cursor-pointer">
+        <h1 class="text-2xl font-bold">i HUB</h1>
+      </a>
 
 
-                <nav class="hidden md:flex space-x-6">
-                    <a href="/" class="text-gray-700">Home</a>
-                    <a href="#" class="text-gray-700">Contact</a>
-                    <a href="#" class="text-gray-700">About</a>
-                    <a href="#" class="text-gray-700">Sign Up</a>
-                </nav>
-                <div class="flex items-center space-x-4">
-                    <input type="text" placeholder="What are you looking for?"
-                        class="border border-gray-300 rounded-full px-4 py-1" style="width: 220px;">
-                    <button class="bg-gray-200 p-2 rounded-full">
-                        <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
-                            <path
-                                d="M12.9 14.32a7.32 7.32 0 111.42-1.42l4.6 4.6-1.42 1.42-4.6-4.6zM8.5 12a5 5 0 100-10 5 5 0 000 10z" />
-                        </svg>
-                    </button>
-                </div>
-            </div>
-        </header>
+      <nav class="hidden md:flex space-x-6">
+        <a href="/" class="text-gray-700">Home</a>
+        <a href="#" class="text-gray-700">Contact</a>
+        <a href="#" class="text-gray-700">About</a>
+        
+      </nav>
+      <div class="flex items-center space-x-4">
+        <input type="text" placeholder="What are you looking for?" class="border border-gray-300 rounded-full px-4 py-1"
+          style="width: 220px;">
+        <button class="bg-gray-200 p-2 rounded-full">
+          <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
+            <path
+              d="M12.9 14.32a7.32 7.32 0 111.42-1.42l4.6 4.6-1.42 1.42-4.6-4.6zM8.5 12a5 5 0 100-10 5 5 0 000 10z" />
+          </svg>
+          
+        </button>
+        <button><i class="fa-solid fa-cart-shopping"></i></button>
+        <button><i class="fa-solid fa-user"></i></button>
+      </div>
+    </div>
+  </header>
   <!-- Breadcrumb -->
   <div class="max-w-7xl mx-auto px-4 py-4 text-sm text-gray-500">
-    <a href="#" class="hover:underline">Account</a> /
-    <a href="#" class="hover:underline">Gaming</a> /
-    <span>Havic HV-G92 Gamepad</span>
+    <a href="#" class="hover:underline">Home</a> /
+    <span>Apple iPhone 16 Pro</span>
   </div>
 
   <!-- Main Content -->
   <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-8">
     <!-- Left Section: Images -->
-    <div>
-      <div class="flex flex-col items-center">
-        <!-- Main Image -->
-        <img src="/iphone 16pro cover.png" alt="Main Product Image" class="rounded-lg shadow-lg w-96 h-96 object-contain">
-        <!-- Thumbnail Images -->
-        <div class="flex space-x-4 mt-4">
-          <img src="/iphone 16pro side.png" alt="Thumbnail" class="w-20 h-20 rounded-lg border hover:shadow-md object-contain">
-          <img src="/iphone 16pro zoom.png" alt="Thumbnail" class="w-20 h-20 rounded-lg border hover:shadow-md object-contain">
-          <img src="/iphone 16pro colors.png" alt="Thumbnail" class="w-20 h-20 rounded-lg border hover:shadow-md object-contain">
-          <img src="/iphone box.png" alt="Thumbnail" class="w-20 h-20 rounded-lg border hover:shadow-md object-contain">
-        </div>
+    <div class="flex flex-col items-center relative">
+      <!-- Main Image Container -->
+      <div class="relative overflow-hidden w-96 h-96" id="mainImageContainer" style="position: relative;">
+        <img id="mainImage" src="/iphone 16pro cover.png" alt="Main Product Image"
+          class="rounded-lg shadow-lg object-contain w-full h-full">
+        <div id="zoomLens" class="hidden absolute border-2 border-gray-400 bg-gray-100 opacity-50"></div>
+        <div id="zoomResult" class="hidden absolute top-0 left-full w-96 h-96 border bg-white shadow-lg"></div>
+      </div>
+
+      <!-- Thumbnail Images -->
+      <div class="flex space-x-4 mt-4">
+        <img src="/iphone 16pro side.png" alt="Thumbnail" onclick="changeMainImage(this)"
+          class="thumbnail w-20 h-20 rounded-lg border hover:shadow-md object-contain cursor-pointer">
+        <img src="/iphone 16pro zoom.png" alt="Thumbnail" onclick="changeMainImage(this)"
+          class="thumbnail w-20 h-20 rounded-lg border hover:shadow-md object-contain cursor-pointer">
+        <img src="/iphone 16pro colors.png" alt="Thumbnail" onclick="changeMainImage(this)"
+          class="thumbnail w-20 h-20 rounded-lg border hover:shadow-md object-contain cursor-pointer">
+        <img src="/iphone box.png" alt="Thumbnail" onclick="changeMainImage(this)"
+          class="thumbnail w-20 h-20 rounded-lg border hover:shadow-md object-contain cursor-pointer">
       </div>
     </div>
-
     <!-- Right Section: Product Details -->
     <div>
       <h1 class="text-2xl font-semibold">Apple iPhone 16 Pro (128 GB) - Desert Titanium</h1>
@@ -66,25 +85,49 @@
         <span class="ml-4 text-green-500 font-medium">In Stock</span>
       </div>
       <p class="text-3xl font-bold mt-4">₹1,19,900</p>
-      <p class="mt-2 text-gray-600">Super Retina XDR display, 17.45 cm (6.9") diagonal, all-screen OLED display, 2796x1290-pixel resolution at 460 ppi...</p>
+      <p class="mt-2 text-gray-600">Super Retina XDR display, 17.43 cm / 6.9″ (diagonal), all‑screen OLED display,
+        2868x1320-pixel resolution at 460 ppi<br>
+
+        <br>Apple Intelligence is the personal intelligence system that helps you write, express yourself and get things
+        done effortlessly. With groundbreaking privacy protections, it gives you peace of mind that no one else can
+        access your data — not even Apple.<br>
+
+        <br>Camera Control gives you an easier way to quickly access camera tools, like zoom or depth of field, so you
+        can
+        take the perfect shot in record time.
+      </p>
 
       <!-- Colors -->
       <div class="mt-4">
         <h3 class="font-semibold text-gray-700">Colours:</h3>
         <div class="flex space-x-4 mt-2">
-          <button class="w-8 h-8 rounded-full bg-gray-300 border hover:ring-2 ring-gray-400"></button>
-          <button class="w-8 h-8 rounded-full bg-gray-400 border hover:ring-2 ring-gray-600"></button>
-          <button class="w-8 h-8 rounded-full bg-gray-500 border hover:ring-2 ring-gray-700"></button>
+          <button class="w-8 h-8 rounded-full border hover:ring-2"
+            style="background-color: #c3b1a3; border-color: #c3b1a3; ring-color: #c3b1a3;">
+          </button>
+
+          <button class="w-8 h-8 rounded-full border hover:ring-2"
+            style="background-color: #e8e8e8; border-color: #e8e8e8; ring-color: #e8e8e8;">
+          </button>
+
+          <button class="w-8 h-8 rounded-full border hover:ring-2"
+            style="background-color: #8d8882; border-color: #8d8882; ring-color: #8d8882;">
+          </button>
+
+          <button class="w-8 h-8 rounded-full border hover:ring-2"
+            style="background-color: #2d2d2d; border-color: #2d2d2d; ring-color: #2d2d2d;">
+          </button>
+
         </div>
       </div>
 
       <!-- Quantity and Buttons -->
       <div class="mt-6 flex items-center space-x-4">
         <div class="flex items-center border rounded">
-          <button class="px-4 py-2 border-r">-</button>
-          <input type="text" value="1" class="w-12 text-center border-none">
-          <button class="px-4 py-2 border-l">+</button>
+          <button class="px-4 py-2 border-r" id="decreaseBtn">-</button>
+          <input type="text" value="1" id="quantityInput" class="w-12 text-center border-none">
+          <button class="px-4 py-2 border-l" id="increaseBtn">+</button>
         </div>
+
         <button class="bg-red-500 text-white px-6 py-2 rounded hover:bg-red-600">Add to Cart</button>
         <button class="bg-gray-200 text-gray-800 px-6 py-2 rounded hover:bg-gray-300">
           ♥
@@ -94,11 +137,11 @@
       <!-- Features -->
       <div class="mt-6 space-y-4">
         <div class="flex items-center space-x-4">
-          <img src="https://via.placeholder.com/30" alt="Free Delivery" class="w-8 h-8">
+          <i class="fa-solid fa-truck"></i>
           <span>Free Delivery</span>
         </div>
         <div class="flex items-center space-x-4">
-          <img src="https://via.placeholder.com/30" alt="Return Delivery" class="w-8 h-8">
+          <i class="fa-solid fa-rotate-left"></i>
           <span>Return Delivery</span>
         </div>
       </div>
@@ -110,22 +153,22 @@
     <h2 class="text-xl font-semibold mb-4">Related Items</h2>
     <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
       <div class="bg-white shadow rounded-lg p-4">
-        <img src="https://via.placeholder.com/200" alt="Related Item" class="rounded-lg w-full h-40">
+        <img src="/iphone16.png" alt="Related Item" class="rounded-lg w-full h-40 object-contain">
         <h3 class="font-medium text-lg mt-4">iPhone 16</h3>
         <p class="text-red-500 font-bold">₹79,900</p>
       </div>
       <div class="bg-white shadow rounded-lg p-4">
-        <img src="https://via.placeholder.com/200" alt="Related Item" class="rounded-lg w-full h-40">
+        <img src="/iphone 15.png" alt="Related Item" class="rounded-lg w-full h-40 object-contain">
         <h3 class="font-medium text-lg mt-4">iPhone 15</h3>
         <p class="text-red-500 font-bold">₹69,900</p>
       </div>
       <div class="bg-white shadow rounded-lg p-4">
-        <img src="https://via.placeholder.com/200" alt="Related Item" class="rounded-lg w-full h-40">
+        <img src="/iphone 14.png" alt="Related Item" class="rounded-lg w-full h-40 object-contain">
         <h3 class="font-medium text-lg mt-4">iPhone 14</h3>
         <p class="text-red-500 font-bold">₹59,900</p>
       </div>
       <div class="bg-white shadow rounded-lg p-4">
-        <img src="https://via.placeholder.com/200" alt="Related Item" class="rounded-lg w-full h-40">
+        <img src="/iphone 14.png" alt="Related Item" class="rounded-lg w-full h-40 object-contain">
         <h3 class="font-medium text-lg mt-4">iPhone 13</h3>
         <p class="text-red-500 font-bold">₹39,500</p>
       </div>
@@ -183,4 +226,87 @@
       <p>Copyright © iHUB 2022. All rights reserved</p>
     </div>
   </footer>
+
+  <script>
+    const mainImageContainer = document.getElementById('mainImageContainer');
+    const mainImage = document.getElementById('mainImage');
+    const zoomLens = document.getElementById('zoomLens');
+    const zoomResult = document.getElementById('zoomResult');
+
+    // Change the main image when a thumbnail is clicked
+    function changeMainImage(thumbnail) {
+      mainImage.src = thumbnail.src;
+      zoomResult.style.backgroundImage = `url(${thumbnail.src})`;
+      zoomResult.style.backgroundSize = `${mainImage.naturalWidth}px ${mainImage.naturalHeight}px`;
+    }
+
+    // Handle mousemove for zoom effect
+    mainImageContainer.addEventListener('mousemove', function (e) {
+      const bounds = mainImageContainer.getBoundingClientRect();
+      const x = e.clientX - bounds.left;
+      const y = e.clientY - bounds.top;
+
+      // Ensure the zoom lens size is proportional to the image size and container size
+      const lensSize = Math.min(100, bounds.width * 0.2); // 20% of the container width or max 100px
+      const lensX = Math.max(0, Math.min(bounds.width - lensSize, x - lensSize / 2));
+      const lensY = Math.max(0, Math.min(bounds.height - lensSize, y - lensSize / 2));
+
+      // Set zoom lens position
+      zoomLens.style.left = `${lensX}px`;
+      zoomLens.style.top = `${lensY}px`;
+      zoomLens.style.width = `${lensSize}px`;
+      zoomLens.style.height = `${lensSize}px`;
+
+      // Show zoom lens and zoom result
+      zoomLens.classList.remove('hidden');
+      zoomResult.classList.remove('hidden');
+
+      // Dynamically adjust the zoom effect based on the natural image size
+      const bgX = -(lensX / bounds.width) * mainImage.naturalWidth;
+      const bgY = -(lensY / bounds.height) * mainImage.naturalHeight;
+
+      // Set the background properties for the zoom result
+      zoomResult.style.backgroundPosition = `${bgX}px ${bgY}px`;
+      zoomResult.style.backgroundImage = `url(${mainImage.src})`;
+      zoomResult.style.backgroundSize = `${mainImage.naturalWidth}px ${mainImage.naturalHeight}px`;
+    });
+
+    // Hide zoom lens and result when mouse leaves
+    mainImageContainer.addEventListener('mouseleave', function () {
+      zoomLens.classList.add('hidden');
+      zoomResult.classList.add('hidden');
+    });
+
+    // Get the elements
+const decreaseBtn = document.getElementById('decreaseBtn');
+const increaseBtn = document.getElementById('increaseBtn');
+const quantityInput = document.getElementById('quantityInput');
+
+// Add event listener for decrease button
+decreaseBtn.addEventListener('click', function() {
+  let currentValue = parseInt(quantityInput.value);
+  if (currentValue > 1) {
+    quantityInput.value = currentValue - 1;
+  }
+});
+
+// Add event listener for increase button
+increaseBtn.addEventListener('click', function() {
+  let currentValue = parseInt(quantityInput.value);
+  quantityInput.value = currentValue + 1;
+});
+
+  </script>
+
+  <style>
+    #zoomLens {
+      pointer-events: none;
+    }
+
+    #zoomResult {
+      background-repeat: no-repeat;
+      pointer-events: none;
+      z-index: 999;
+    }
+  </style>
 </body>
